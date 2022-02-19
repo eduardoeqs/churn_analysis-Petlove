@@ -1,0 +1,364 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16921,        356]
+NotebookOptionsPosition[     15931,        332]
+NotebookOutlinePosition[     16338,        348]
+CellTagsIndexPosition[     16295,        345]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8538632619584646`*^9, 3.853863272819517*^9}, {
+  3.8539323648847466`*^9, 3.853932365869746*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"4cdc6140-ba03-474d-b243-0e6b98944dd2"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\bateq\\\\Documents\\\\Study Case \
+Petlove\"\>"], "Output",
+ CellChangeTimes->{3.8538632739040937`*^9, 3.8539323667608733`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"5a321731-7d47-410a-ac66-0c9ee95eb908"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"df", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<data-test-analytics.csv\>\"", ",", "\"\<Dataset\>\"", ",", " ", 
+     RowBox[{"HeaderLines", "->", " ", "1"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8538632371361027`*^9, 3.853863243134599*^9}, {
+  3.8539323793360724`*^9, 3.853932429385577*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"36fc1012-38ea-4bb3-aa95-5a95053d63a7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"explain", " ", "=", " ", 
+   RowBox[{"Dataset", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{
+       "\"\<id\>\"", "->", " ", 
+        "\"\<Identifica\[CCedilla]\[ATilde]o do cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<created_at\>\"", "->", " ", 
+        "\"\<Data de cria\[CCedilla]\[ATilde]o da assinatura\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<updated_at\>\"", "->", " ", 
+        "\"\<Data da \[UAcute]ltima modifica\[CCedilla]\[ATilde]o da \
+assinatura\>\""}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<deleted_at\>\"", "->", " ", 
+        "\"\<Data de cancelamento da assinatura\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<name_hash\>\"", "->", " ", 
+        "\"\<Nome do usu\[AAcute]rio(criptografado)\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<email_hash\>\"", "->", " ", "\"\<Email(criptografado\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<address_hash\>\"", "->", " ", 
+        "\"\<Endere\[CCedilla]o(criptografado)\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<birth_date\>\"", "->", " ", 
+        "\"\<Data de anivers\[AAcute]rio do cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<status\>\"", "->", " ", "\"\<Status da assinatura\>\""}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<version\>\"", "->", " ", "\"\<Vers\[ATilde]o da assinatura\>\""}],
+        ",", "\[IndentingNewLine]", 
+       RowBox[{"\"\<city\>\"", "->", " ", "\"\<Cidade do cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<state\>\"", "->", " ", "\"\<Estado do cliente\>\""}], ",",
+        "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<neighborhood\>\"", "->", " ", "\"\<Bairro do cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<last_date_purchase\>\"", "->", " ", 
+        "\"\<Data do \[UAcute]ltimo pedido que ocorrreu pela \
+assinatura\>\""}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<average_ticket\>\"", "->", " ", 
+        "\"\<M\[EAcute]dia de gasto por pedido\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<items_quantity\>\"", "->", " ", 
+        "\"\<M\[EAcute]dia de itens na assinatura\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<all_revenue\>\"", "->", " ", 
+        "\"\<Total de receita realizado pelo cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<all_orders\>\"", "->", " ", 
+        "\"\<Total de pedidos realizado pelo cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<recency\>\"", "->", " ", 
+        "\"\<Tempo desde a \[UAcute]ltima compra do cliente\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<marketing_source\>\"", "->", " ", 
+        "\"\<Canal de marketing que converteu a assinatura\>\""}]}], "|>"}], 
+     "}"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.853932431916018*^9, 3.8539324689288664`*^9}, {
+   3.8539325189386177`*^9, 3.8539329782409463`*^9}, {3.853933036292023*^9, 
+   3.853933098532433*^9}, 3.8539331510390787`*^9, {3.853933200661674*^9, 
+   3.8539332139394855`*^9}, 3.8539333051923876`*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"4491f3e4-f1f5-42e5-8dbc-e8774cc05158"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GroupBy", "[", 
+  RowBox[{
+   RowBox[{"df", "[", 
+    RowBox[{";;", ",", "\"\<status\>\"", ",", "\"\<deleted_at\>\""}], "]"}], 
+   ",", 
+   RowBox[{"First", "->", "Last"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8539334557423887`*^9, 3.853933558285471*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"cd087bb2-eefc-41f4-a607-7a313f78813f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "GroupBy", "list1", 
+   "\"The argument \\!\\(\\*InterpretationBox[RowBox[{TagBox[\\\"Failure\\\", \
+\\\"SummaryHead\\\"], \\\"[\\\", DynamicModuleBox[{Typeset`open$$ = False, \
+Set[Typeset`embedState$$, \\\"Ready\\\"]}, \
+TemplateBox[List[PaneSelectorBox[List[Rule[False, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"Cannot take part deleted_at of expression of form \
+PatternForm[Atom[Enumeration[active, canceled, paused]]].\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"Dataset\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]], Rule[True, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"Cannot take part deleted_at of expression of form \
+PatternForm[Atom[Enumeration[active, canceled, paused]]].\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"Dataset\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]]], Dynamic[Typeset`open$$], Rule[ImageSize, Automatic]]], \
+\\\"SummaryPanel\\\"], RuleDelayed[DynamicModuleValues, List[]]], \
+\\\"]\\\"}], Failure[Dataset, \
+Association[RuleDelayed[\\\"MessageTemplate\\\", MessageName[Dataset, \
+\\\"partatomic\\\"]], Rule[\\\"MessageParameters\\\", \
+Association[Rule[\\\"Type\\\", \
+TypeSystem`Atom[TypeSystem`Enumeration[\\\"active\\\", \\\"canceled\\\", \
+\\\"paused\\\"]]], Rule[\\\"Part\\\", \\\"deleted_at\\\"], \
+Rule[\\\"Symbol\\\", Part]]]]], Rule[Selectable, False], Rule[Editable, \
+False], Rule[SelectWithContents, True]]\\) is not a valid list of \
+Associations or rules or lists of rules.\"", 2, 42, 3, 31843131047765506277, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8539335590040483`*^9},
+ CellLabel->
+  "During evaluation of \
+In[42]:=",ExpressionUUID->"d8d77fdd-a36e-418f-bde1-df7dd2cca9ed"],
+
+Cell[BoxData[
+ RowBox[{"GroupBy", "[", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{
+     TagBox["Failure",
+      "SummaryHead"], "[", 
+     DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = 
+      "Ready"}, 
+      TemplateBox[{
+        PaneSelectorBox[{False -> GridBox[{{
+              FrameBox[
+               StyleBox["\"\[WarningSign]\"", 
+                Directive["Message", 35], StripOnInput -> False], 
+               ContentPadding -> False, FrameStyle -> None, 
+               FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+              GridBox[{{
+                 TagBox[
+                  GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Cannot take part deleted_at of expression of form \
+PatternForm[Atom[Enumeration[active, canceled, paused]]].\"", 
+                    "SummaryItem"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+                 TagBox[
+                  GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["Dataset", "SummaryItem"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}},
+                GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+            AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}], True -> GridBox[{{
+              FrameBox[
+               StyleBox["\"\[WarningSign]\"", 
+                Directive["Message", 35], StripOnInput -> False], 
+               ContentPadding -> False, FrameStyle -> None, 
+               FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+              GridBox[{{
+                 TagBox[
+                  GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"Cannot take part deleted_at of expression of form \
+PatternForm[Atom[Enumeration[active, canceled, paused]]].\"", 
+                    "SummaryItem"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+                 TagBox[
+                  GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["Dataset", "SummaryItem"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}},
+                GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {
+                "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+               BaseStyle -> {
+                ShowStringCharacters -> False, NumberMarks -> False, 
+                 PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+            GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+            AutoDelete -> False, 
+            GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+            BaselinePosition -> {1, 1}]}, 
+         Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+       "SummaryPanel"],
+      DynamicModuleValues:>{}], "]"}],
+    Failure[
+    Dataset, <|
+     "MessageTemplate" :> MessageName[Dataset, "partatomic"], 
+      "MessageParameters" -> <|"Type" -> TypeSystem`Atom[
+          TypeSystem`Enumeration["active", "canceled", "paused"]], "Part" -> 
+        "deleted_at", "Symbol" -> Part|>|>],
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], ",", 
+   RowBox[{"First", "\[Rule]", "Last"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.85393349925889*^9, 3.853933559129017*^9}},
+ CellLabel->"Out[42]=",ExpressionUUID->"372bb29d-1362-44c8-9ef5-a0b37e27c036"]
+}, Open  ]]
+},
+WindowSize->{1024.5, 507.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"216e7f2b-c730-4daa-a621-d16365e15637"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 301, 5, 28, "Input",ExpressionUUID->"4cdc6140-ba03-474d-b243-0e6b98944dd2"],
+Cell[884, 29, 238, 3, 32, "Output",ExpressionUUID->"5a321731-7d47-410a-ac66-0c9ee95eb908"]
+}, Open  ]],
+Cell[1137, 35, 440, 9, 28, "Input",ExpressionUUID->"36fc1012-38ea-4bb3-aa95-5a95053d63a7"],
+Cell[1580, 46, 3466, 82, 409, "Input",ExpressionUUID->"4491f3e4-f1f5-42e5-8dbc-e8774cc05158"],
+Cell[CellGroupData[{
+Cell[5071, 132, 362, 8, 28, "Input",ExpressionUUID->"cd087bb2-eefc-41f4-a607-7a313f78813f"],
+Cell[5436, 142, 5354, 82, 74, "Message",ExpressionUUID->"d8d77fdd-a36e-418f-bde1-df7dd2cca9ed"],
+Cell[10793, 226, 5122, 103, 65, "Output",ExpressionUUID->"372bb29d-1362-44c8-9ef5-a0b37e27c036"]
+}, Open  ]]
+}
+]
+*)
+
