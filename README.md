@@ -4,6 +4,7 @@ Análise do Churn da empresa Petlove. O objetivo deste trabalho é o estudo do p
 utilizando modelos visuais e estatísticos para serem enviados a gerência da empresa. 
 
 - **Organização do Git**
+
 O seguinte Git contém 2 jupyter notebook. O Analise.ipynb que consiste em uma investigação rápida e gráficos preliminares, e o Analise_organizada.ipynb que contém os gráficos gerados para formar o relatório.
 
 - **Análise**
